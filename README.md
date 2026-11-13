@@ -10,19 +10,19 @@ Laravelを使用して開発したお問い合わせフォームアプリケー�
 
 ## 使用技術
 
-| 項目 | 技術 |
-|---|---|
-| OS | Docker対応OS |
-| 言語 | PHP 8.2 |
-| フレームワーク | Laravel 10.x |
-| データベース | MySQL 8.0 |
-| Webサーバー | Nginx |
-| フロントエンドビルドツール | Vite |
-| CSSフレームワーク | Tailwind CSS ^3.4.0 |
-| コンテナ管理 | Docker / Laravel Sail |
-| DB管理ツール | phpMyAdmin |
-| テスト | PHPUnit |
-| コード整形 | Laravel Pint |
+| 項目                       | 技術                  |
+| -------------------------- | --------------------- |
+| OS                         | Docker対応OS          |
+| 言語                       | PHP 8.2               |
+| フレームワーク             | Laravel 10.x          |
+| データベース               | MySQL 8.0             |
+| Webサーバー                | Nginx                 |
+| フロントエンドビルドツール | Vite                  |
+| CSSフレームワーク          | Tailwind CSS ^3.4.0   |
+| コンテナ管理               | Docker / Laravel Sail |
+| DB管理ツール               | phpMyAdmin            |
+| テスト                     | PHPUnit               |
+| コード整形                 | Laravel Pint          |
 
 ## 主な機能
 
@@ -170,12 +170,12 @@ erDiagram
 
 ### テーブル説明
 
-| テーブル名 | 説明 |
-|---|---|
-| users | ユーザー・管理者情報 |
-| categories | お問い合わせカテゴリ |
-| contacts | お問い合わせ情報 |
-| tags | タグ情報 |
+| テーブル名  | 説明                             |
+| ----------- | -------------------------------- |
+| users       | ユーザー・管理者情報             |
+| categories  | お問い合わせカテゴリ             |
+| contacts    | お問い合わせ情報                 |
+| tags        | タグ情報                         |
 | contact_tag | お問い合わせとタグの中間テーブル |
 
 ### テーブル間のリレーション
@@ -197,23 +197,23 @@ erDiagram
 
 ### エンドポイント一覧
 
-| HTTPメソッド | エンドポイント | 機能 |
-|---|---|---|
-| GET | `/api/v1/contacts` | お問い合わせ一覧取得 |
-| GET | `/api/v1/contacts/{contact}` | お問い合わせ詳細取得 |
-| POST | `/api/v1/contacts` | お問い合わせ登録 |
-| PUT | `/api/v1/contacts/{contact}` | お問い合わせ更新 |
-| DELETE | `/api/v1/contacts/{contact}` | お問い合わせ削除 |
+| HTTPメソッド | エンドポイント               | 機能                 |
+| ------------ | ---------------------------- | -------------------- |
+| GET          | `/api/v1/contacts`           | お問い合わせ一覧取得 |
+| GET          | `/api/v1/contacts/{contact}` | お問い合わせ詳細取得 |
+| POST         | `/api/v1/contacts`           | お問い合わせ登録     |
+| PUT          | `/api/v1/contacts/{contact}` | お問い合わせ更新     |
+| DELETE       | `/api/v1/contacts/{contact}` | お問い合わせ削除     |
 
 ### HTTPステータスコード
 
-| ステータスコード | 内容 |
-|---|---|
-| 200 | リクエスト成功 |
-| 201 | リソース作成成功 |
-| 204 | 削除成功 |
-| 404 | 対象データが存在しない |
-| 422 | バリデーションエラー |
+| ステータスコード | 内容                   |
+| ---------------- | ---------------------- |
+| 200              | リクエスト成功         |
+| 201              | リソース作成成功       |
+| 204              | 削除成功               |
+| 404              | 対象データが存在しない |
+| 422              | バリデーションエラー   |
 
 ## 環境構築
 
@@ -226,7 +226,7 @@ erDiagram
 ### 1. リポジトリのクローン
 
 ```bash
-git clone <リポジトリURL>
+git clone git@github.com:ken19-18/contact-form-app.git
 cd contact-form-app
 ```
 
@@ -297,11 +297,11 @@ npmのインストール時にesbuildのスクリプトがブロックされた�
 
 初期データ登録時に `UserSeeder` によってテストユーザーが登録されます。
 
-| 項目 | 内容 |
-|---|---|
-| 名前 | Test User |
+| 項目           | 内容               |
+| -------------- | ------------------ |
+| 名前           | Test User          |
 | メールアドレス | `test@example.com` |
-| パスワード | `password` |
+| パスワード     | `password`         |
 
 ### ログイン方法
 
@@ -311,10 +311,10 @@ npmのインストール時にesbuildのスクリプトがブロックされた�
 
 ## アクセス先
 
-| サービス | URL |
-|---|---|
-| アプリケーション | [http://localhost](http://localhost) |
-| phpMyAdmin | [http://localhost:8080](http://localhost:8080) |
+| サービス         | URL                                            |
+| ---------------- | ---------------------------------------------- |
+| アプリケーション | [http://localhost](http://localhost)           |
+| phpMyAdmin       | [http://localhost:8080](http://localhost:8080) |
 
 ## テスト
 
