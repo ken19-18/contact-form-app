@@ -226,7 +226,7 @@ erDiagram
 ### 1. リポジトリのクローン
 
 ```bash
-git clone git@github.com:ken19-18/contact-form-app.git
+git clone https://github.com/ken19-18/contact-form-app.git
 cd contact-form-app
 ```
 
@@ -245,10 +245,13 @@ docker compose build laravel.test
 ### 4. Composerパッケージのインストール
 
 ```bash
-docker compose run --rm --no-deps \
-  --user "$(id -u):$(id -g)" \
-  -e COMPOSER_HOME=/tmp/composer \
-  --entrypoint composer laravel.test install
+docker run --rm \
+  -u "$(id -u):$(id -g)" \
+  -v "$(pwd)":/var/www/html \
+  -w /var/www/html \
+  -e COMPOSER_CACHE_DIR=/tmp/composer_cache \
+  laravelsail/php82-composer:latest \
+  composer install
 ```
 
 ### 5. Dockerコンテナの起動
@@ -273,12 +276,6 @@ docker compose run --rm --no-deps \
 
 ```bash
 ./vendor/bin/sail npm install
-```
-
-npmのインストール時にesbuildのスクリプトがブロックされた場合は、次のコマンドで許可してください。
-
-```bash
-./vendor/bin/sail npm install-scripts approve esbuild
 ```
 
 ### 9. Viteの起動

@@ -37,6 +37,7 @@ services:
       - laravel.test
   mysql:
     image: "mysql:8.0"
+    platform: linux/amd64
     ports:
       - "${FORWARD_DB_PORT:-3306}:3306"
     environment:
@@ -80,8 +81,5 @@ networks:
   sail:
     driver: bridge
 volumes:
-  sail-mysql:
-    driver: local
   mysql80-test-data:
-    external: true
-    name: contact-form-app_mysql80-test-data
+    driver: local
